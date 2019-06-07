@@ -1,23 +1,24 @@
 body{
 	margin:0;
 	padding:0;
-	background-color: #140e13;
+  background-color:#f4f3f1;
+  font-family: Arial, Helvetica, sans-serif;
 	-webkit-touch-callout:none;
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
 }
 
 .container{
-  display:flex;
+  display:block;
   margin:0 auto;
-  max-width:1020px;
-  min-height: 680px;
-  align-items:center;
-  flex-direction:column;
+  overflow: hidden;
+  min-height: 480px;
+  padding-bottom:10px;
+  background-color:#412911;
   background-repeat: no-repeat;
   background-size: 1020px 680px;
-  background-position: top center;
-  background-image:url("https://i.ibb.co/RPRZMM4/bg.jpg");
+  background-position: center -40px;
+  background-image:url("assets/imgs/bg.jpg");
 
   &.direction-rtl{
     direction: rtl;
@@ -41,9 +42,135 @@ body{
 
 }
 
+.header{
+  height:50px;
+  display: block;
+  background-color: #fec226;
+  background-size: 179px 41px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(assets/imgs/brand-logo.png);
+}
+
 .creativeArea{
   width:320px;
-  height:240px;
+  height:190px;
+}
+
+.spaceWrap{
+  margin:10px;
+  display: block;
+}
+
+.quizArea{
+  height: auto;
+  display:block;
+  margin:0 auto;
+  max-width:480px;
+  position: relative;
+  text-align: center;
+  border-radius: 25px;
+  border:3px solid #fec226;
+  background-color: #3e2a19;
+  padding:15px 10px 30px 10px;
+  box-shadow:inset 0px 0px 10px rgba(0,0,0,0.95), 0px 2px 2px rgba(0,0,0,0.75);
+
+  &::after{
+    content:"";
+    top: -50px;
+    width:78px;
+    height:83px;
+    right: -10px;
+    display: block;
+    position: absolute;
+    background-size: 100% auto;
+    background-image: url(assets/imgs/coffebean.png);
+  }
+
+  .panel{
+    display:none;
+  }
+
+  &.display-quiz1 .quiz1,
+  &.display-quiz2 .quiz2,
+  &.display-quiz3 .quiz3{
+    display: block;
+  }
+
+  .steps{
+    margin:0;
+    padding:0;
+    display: flex;
+    position: relative;
+    justify-content:space-around;
+
+    &.active-step1 .step1,
+    &.active-step2 .step2,
+    &.active-step3 .step3{
+      color:#fec226;
+    }
+
+    &::before{
+      content:"";
+      top:20px;
+      left:0px;
+      z-index:0;
+      right:0px;
+      width:70%;
+      margin:0 auto;
+      position: absolute;
+      border-bottom:3px solid #150d06;
+    }
+
+
+    li{
+      z-index: 2;
+      width:25px;
+      height:25px;
+      margin:10px 0;
+      color:#513923;
+      position: static;
+      list-style: none;
+      font-weight:bold;
+      line-height: 25px;
+      text-align: center;
+      border-radius: 100%;
+      background-color: #150d06;
+    }
+
+  }
+
+  .question{
+    margin:10px;
+    color:#fff;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  button{
+    width:100%;
+    margin:6px 0;
+    outline:none;
+    cursor:pointer;
+    color:#452c15;
+    font-size: 16px;
+    font-weight:bold;
+    padding:15px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    border:1px solid #ffd200;
+    background: rgb(255,181,45); 
+    box-shadow:inset 0px 0px 2px rgba(255,255,255,0.5), 0px 2px 2px rgba(0,0,0,0.75);
+    background: -moz-linear-gradient(top,  rgba(255,181,45,1) 0%, rgba(255,116,10,1) 100%); 
+    background: -webkit-linear-gradient(top,  rgba(255,181,45,1) 0%,rgba(255,116,10,1) 100%);
+
+    &:hover{
+      opacity:0.85;
+    }
+
+  }
+
 }
 
 .subscriptionArea{
@@ -83,124 +210,47 @@ body{
 }
 
 .persuasiveArea{
-  width:320px;
-  height: 80px;
+  width:100%;
+  height: 50px;
   display: flex;
+  margin:10px 0;
   align-items:center;
   justify-content:center;
+  background-color:#f4f3f1;
+  background-size: 220px 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(assets/imgs/mentions.png);
 }
 
 .legalArea{
-  width:320px;
-  min-height:300px;
+  color:#999;
+  padding:10px;
+  margin:0 auto;
+  font-size: 12px;
+  max-width:460px;
+  line-height: 1.5em;
+  text-align: justify;
+  // min-height:300px;
 }
 
-.bounceIn {
-  -webkit-animation-duration: 0.75s;
-  animation-duration: 0.75s;
-  -webkit-animation-name: bounceIn;
-  animation-name: bounceIn;
+.timerArea{
+  left:0;
+  right:0;
+  top:-45px;
+  width:100px;
+  height: 35px;
+  padding:10px;
+  color:#fff;
+  margin:0 auto;
+  display:block;
+  font-size: 24px;
+  font-weight:bold;
+  line-height: 35px;
+  position: absolute;
+  text-align: center;
+  border-radius: 25px;
+  border:3px solid #fec226;
+  background-color: #3e2a19;
+  box-shadow:inset 0px 0px 10px rgba(0,0,0,0.95), 0px 2px 2px rgba(0,0,0,0.75);
 }
-
-@-webkit-keyframes bounceIn {
-  from,
-  20%,
-  40%,
-  60%,
-  80%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-
-  20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
-  }
-
-  80% {
-    -webkit-transform: scale3d(0.97, 0.97, 0.97);
-    transform: scale3d(0.97, 0.97, 0.97);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.animated.infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-@keyframes bounceIn {
-  from,
-  20%,
-  40%,
-  60%,
-  80%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-
-  20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
-  }
-
-  80% {
-    -webkit-transform: scale3d(0.97, 0.97, 0.97);
-    transform: scale3d(0.97, 0.97, 0.97);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
